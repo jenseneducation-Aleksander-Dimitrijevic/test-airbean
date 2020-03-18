@@ -1,30 +1,31 @@
 <template>
   <div id="app">
-    <div id="nav">
-    </div>
-    <router-view/>
+  <router-view/>
   </div>
 </template>
 
 <style lang="scss">
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family:sans-serif;
   text-align: center;
   color: #2c3e50;
+  background: #F3E4E1;
+  height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  .home{
+    padding: 6rem 1.5; 
+    box-sizing: border-box;
+    background-image: url('./assets/graphics/graphics-header.svg'), url('./assets/graphics/graphics-footer.svg');
+    background-position: top center, bottom center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, 100%; 
+
+  } 
+  
 }
 
-#nav {
-  padding: 30px;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
