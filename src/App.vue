@@ -3,6 +3,15 @@
   <router-view/>
   </div>
 </template>
+<script>
+export default {
+  name:'App',
+  //before mount is used to fetch the data from the menu json file
+  beforeMount(){
+    this.$store.dispatch('getMenuList')
+  }
+}
+</script>
 
 <style lang="scss">
 
@@ -25,7 +34,4 @@
   } 
   
 }
-
-
-
 </style>

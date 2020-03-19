@@ -1,5 +1,5 @@
 <template>
-    <div id="home" @click="$router.push('/meny')">
+    <div id="home" @click="$router.push('/menu')">
     <img src="./../assets/graphics/airbean-landing.svg" alt="logo">
   </div>
   
