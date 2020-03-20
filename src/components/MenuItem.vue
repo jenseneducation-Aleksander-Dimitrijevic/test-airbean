@@ -28,9 +28,9 @@ export default {
 .menuitem{
   display:grid;
   max-width:420px;
-  grid-template-columns: 4rem 1fr 2rem;
+  grid-template-columns: 3rem 1fr 2rem;
   grid-template-rows:1.2rem 1.2 rem;
-  margin-left:10px;
+  margin-left:30px;
   .additem{
     display:flex;
     grid-row:1/2;
@@ -72,7 +72,7 @@ export default {
   .itemprice{
     grid-column:3/4 ;
     grid-row:1/2;
-    margin:10px;
+    margin:10px 0;
     display:flex;
     font-size:24px;
     font-display: bold;

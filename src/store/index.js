@@ -7,11 +7,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    menu:[]
+    menu:[],
+    showNavbar:false,
   },
   mutations: {
     displayMenu(state,menu){
       state.menu = menu
+    },
+    closeNavbar(state){
+      state.showNavbar = !state.showNavbar
     }
   },
   actions: {
