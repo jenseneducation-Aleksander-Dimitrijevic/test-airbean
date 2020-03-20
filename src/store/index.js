@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import menuList from './../assets/data/menu.json'
+import menuList from '../../api/data/menu.json'
 
 Vue.use(Vuex)
 

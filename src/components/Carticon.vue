@@ -12,6 +12,19 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.carticon {
+        background:black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: .8rem;
+        height:0.8rem;
+        padding:1.6rem;       
+        border-radius:100%;
+        float:right;
+        margin-top:-65px;
+        margin-right:30px;
+}
 
 </style>

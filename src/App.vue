@@ -20,7 +20,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   background: #F3E4E1;
-  height: 100vh;
+  height: 130vh;
   max-width: 480px;
   margin: 0 auto;
   .home{
