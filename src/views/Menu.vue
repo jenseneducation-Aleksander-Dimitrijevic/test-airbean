@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Menuicon from './../components/Menuicon'
-import Carticon from './../components/Carticon'
-import Menuitem from './../components/Menuitem'
+import Menuicon from '../components/Menuicon'
+import Carticon from '../components/Carticon'
+import Menuitem from '../components/Menuitem'
 
 export default {
     name:'Menu',
