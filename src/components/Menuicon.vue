@@ -12,12 +12,17 @@
 </script>
 
 <style lang="scss">
-  .menucon {
+  .menuicon {
         background: white;
         display: flex;
         justify-content: center;
         align-items: center;
-        width:1.2 rem;
+        width: .8rem;
+        height:0.8rem;
+        padding:1.6rem;       
+        border-radius:100%;
+        margin-top:40px;
+        margin-left:30px;
      }
 
 </style>

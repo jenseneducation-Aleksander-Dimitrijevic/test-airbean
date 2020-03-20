@@ -29,6 +29,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  .menu{
+      height:130vh;
+      max-width:480px;
+      margin: 0 auto;
+      padding-top:1.4rem;
+      h1{
+         font-size:32px;
+         margin-top:75px;
+      }
+      box-sizing: border-box;
+      background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
+      background-position: top center, bottom center;
+      background-repeat: no-repeat, no-repeat;
+      background-size: 100%, 100%;
+
+      
+  }
 
 </style>
