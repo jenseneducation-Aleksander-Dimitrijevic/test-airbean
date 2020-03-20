@@ -1,13 +1,21 @@
 <template>
-    <div class = "menuicon">
-        <img src='./../assets/graphics/navicon.svg' alt="Menuicon"/>
+    <div class = "menuicon" v-on:click="close">
+        <img class="menuiconimage" v-if="type==='menuicon'" src='./../assets/graphics/navicon.svg' alt="menuicon"/>
+        <img  class="menuiconimage" v-if="type==='close'" src='./../assets/graphics/close.svg' alt="close"/>
     </div>
 </template>
 
 <script>
     export default {
-        name:'Menuicon',
-        
+     name:'Menuicon',
+     props:{
+            type:String
+        },
+     methods:{
+         close(){
+            this.$store.commit('closeNavbar')
+         }
+     }        
     }
 </script>
 
@@ -23,6 +31,9 @@
         border-radius:100%;
         margin-top:40px;
         margin-left:30px;
+     }
+     .menuiconimage{
+         width:200%;
      }
 
 </style>

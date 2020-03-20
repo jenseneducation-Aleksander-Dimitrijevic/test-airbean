@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-      <Menuicon />
+      <Menuicon :type="'menuicon'"/>
       <Carticon />
       <h1>Meny</h1>
       <Menuitem v-for="item in menu"
