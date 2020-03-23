@@ -18,8 +18,6 @@ Jolly Roger fire ship prow mizzen starboard barkadeer gabion yo-ho-ho bounty log
   <h2>Eva Cortado </h2>
   <p>VD & Grundare</p>
 </div>
-</div>
-
 
   <div class="about">
     <Menuicon :type="'menuicon'"/>
@@ -37,6 +35,8 @@ Jolly Roger fire ship prow mizzen starboard barkadeer gabion yo-ho-ho bounty log
     <h2>Eva Cortado</h2>
     <h5>VD & Grundare</h5>
   </div>
+</div>
+
 
 </template>
 
@@ -96,7 +96,7 @@ h2 {
 h3 {
     font-size: 1.4rem;
     margin: 0;
-=======
+}
 /* .about{
   text-align: center;
   padding: 10px;
