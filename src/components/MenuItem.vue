@@ -1,6 +1,6 @@
 <template>
   <div class="menuitem">
-    <div class="additem">
+    <div class="additem" @click="additem">
       <button>
         <img src="./../assets/graphics/add.svg" alt="add icon" />
       </button>
@@ -19,6 +19,11 @@ export default {
   props:{
     item:Object
   },
+  methods:{
+    additem(){
+      this.$store.dispatch('additemTocart',this.item)
+    }
+  }
   
 }
 </script>
