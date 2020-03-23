@@ -1,3 +1,4 @@
+
 <template>
   <div class="menu">
       <Menuicon :type="'menuicon'"/>
@@ -49,3 +50,4 @@ export default {
   }
 
 </style>
+

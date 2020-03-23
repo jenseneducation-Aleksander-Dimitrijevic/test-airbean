@@ -12,6 +12,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    activeOrder: {},
+    loading: false, 
     menu:[],
     showNavbar:false,
     cart:[]
