@@ -64,7 +64,7 @@ export default {
       display:flex;
       flex:1;
       margin:10px;
-      border-bottom:2px dotted black;
+      border-bottom:1px dotted black;
     }
   }
   .itemdesc{

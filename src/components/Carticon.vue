@@ -1,30 +1,45 @@
 <template>
     <div class="carticon">
-        <div class="count" >{{ cartItemCount }}</div>
-        <img src="./../assets/graphics/bag.svg" alt="Carticon" />
+        <div class="count" >{{ cartLength }}</div>
+        <img src="./../assets/graphics/bag.svg" alt="Carticon" @click="showCart =! showCart" />
+        <Cart v-if="showCart" />
 
     </div>
 </template>
 
 <script>
+import Cart from './Cart'
     export default {
         name:'Carticon',
+        components:{
+            Cart
+        },
+        data(){
+            return{
+                showCart:false,
+            }
+        },
         computed:{
             cart(){
                 return this.$store.state.cart
 
             },
-            cartItemCount(){
-                return this.$store.getters.cartItemCount
-            }
-            // cartLength(){
-            //     let total= 0;
-            //     this.$store.state.cart.forEach(item =>{
-            //         total += item.quantity;
-            //     });
-            //     return total;
+            // cartItemCount(){
+            //     return this.$store.getters.cartItemCount
             // }
-        }
+            cartLength(){
+                let total= 0;
+                this.$store.state.cart.forEach(item =>{
+                    total += item.quantity;
+                });
+                return total;
+            }
+        },
+        // methods:{
+        //     statusCart(){
+        //        return this.showCart =! this.showCart
+        //     }
+        // }
         
     }
 </script>

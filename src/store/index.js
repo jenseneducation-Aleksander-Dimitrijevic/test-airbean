@@ -30,7 +30,15 @@ export default new Vuex.Store({
         title:item.title,
         quantity:1
       })
+    },
+    updateItemInCart(state,id){
+      let index = state.cart.findIndex(item=> item.id === id)
+      state.cart[index].quantity++;
 
+    },
+    removeItemInCart(state,id){
+      let index = state.cart.findIndex(item => item.id===id)
+      state.cart.splice(index,1)
     }
   },
   actions: {
@@ -40,14 +48,19 @@ export default new Vuex.Store({
       },500)
     },
     additemTocart(content,item){
-      content.commit('additem',item)
+      let checkItem = content.state.cart.filter(check => check.id === item.id)
+      
+      if(checkItem.length > 0){
+        content.commit('updateItemInCart',checkItem[0].id)
+      }else{
+        content.commit('additem',item)} 
     }
   },
-  getters:{
-    cartItemCount(state){
-      return state.cart.length
-    }
-  }
+  // getters:{
+  //   cartItemCount(state){
+  //     return state.cart.length
+  //   }
+  // }
 })
 
 

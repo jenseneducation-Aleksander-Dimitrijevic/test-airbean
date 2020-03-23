@@ -13,14 +13,11 @@
 </template>
 
 <script>
-import Cartitem from './CartItem' 
+import CartItem from './CartItem' 
 export default {
   name: 'Cart',
   components:{
      CartItem,
-  },
-  props: {
-    msg: String
   },
   computed:{
     cart(){
@@ -45,5 +42,57 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+ .cart{
+   position:fixed;
+   background:white;
+   z-index:99;
+   width:400px;
+   margin:200px -400px 0 0;
+   border-radius: .3rem;
+    
+   .totalamount{
+     display:flex;
+     flex-direction:column;
+     margin:0 0 0 45px;
+     h3{
+       display:flex;
+       font-size:24px;
+       
+       .dots{
+         display:flex;
+         justify-content:center;
+         align-items:center;
+          flex:1;
+          border-bottom:2px dotted black;
+          margin:3px;
+       }
+     }
+     p{
+       display:flex;
+       justify-content:flex-start;
+       margin:0 0 0 5px; 
+       padding:0;
+     }
 
+   }
+   .button{
+        display: flex;
+        font-size: 1.4rem;
+        text-decoration: none;
+        height: 4rem;
+        margin: 10px auto;
+        justify-content: center;
+        align-items: center;
+        color: #eee;
+        border-radius: 15px;;
+        background:black;
+
+        &:active {
+            color: white;
+            background: black;
+        }
+   }
+
+
+ }
 </style>
