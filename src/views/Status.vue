@@ -1,22 +1,28 @@
 <template>
     <div class="status">
-        <div class="loading">
-            <img src="./../assets/graphics/loader.png" alt="Loader">
-            
+        <div class="loader" v-if="loding">
+            <img src="./../assets/graphics/loader.png" alt="loading!">
         </div>
-        <p class="order">Ordernummer #12DV23F </p>
-        <img src="./../assets/graphics/drone.svg" alt="drone">
-        <h1> Din beställing är påväg! </h1>
-        <p> ETA min</p>
-        <a href="#" class="btn" @click="router.push('/menu')">OK, Cool!</a>
+        <p class="order" v-if="order.orderNr">Ordernummer <span>#{{order.orderNr}}</span> </p>
+        <img v-if="order.orderNr" src="./../assets/graphics/drone.svg" alt="drone">
+        <h1 v-if="order.orderNr"> Din beställing är påväg! </h1>
+        <h1 v-if="!order.orderNr && !loading"> Här ser du din beställing</h1>
+        <p class="eta" v-if=" order.orderNr"> ETA {{ order.ETA }} min</p>
+        <a href="#" class="btn" @click="$router.push('/menu')">OK, Cool!</a>
     </div>
 </template>
 
 <script>
-
-    export default {
-        
+export default {
+computed: {
+    order(){
+        return this.$store.state.activeOrder;
+    },
+    loading(){
+        return this.$store.state.loading;
     }
+}        
+}
 </script>
 
 <style lang="scss" scoped>
@@ -30,10 +36,22 @@
         margin: 2rem 0;
     }
     .loader{
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        flex-direction: column;
         margin: 4rem 0;
     }
     .img{
         width: 4rem;
+        animation: hover 5s linear infinite;
+    }
+    @keyframes hover {
+     0% { transform: translateY(0) rotateZ(0deg); }
+     25% { transform: translateY(.25rem) rotateZ(1deg); }
+     50% { transform: translateY(.5rem) rotateZ(0deg); }
+     75% { transform: translateY(.25rem) rotateZ(-1deg); }
+    100% { transform: translateY(0) rotateZ(0deg); }    
     }
     h1{
     font-size: 2.5rem;
@@ -42,6 +60,10 @@
     }
     p{
        padding: 1.5rem;
+    }
+    .eta {
+        font-size: 1.1rem;
+        margin: 2rem;
     }
      .btn {
     display: flex;
@@ -73,4 +95,11 @@ h1{
     font-size: 2.5rem;
     margin: 1rem 0;
 }
+//animations
+ .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+  }
+  .fade-enter, .fade-leave-to  {
+    opacity: 0;
+  }
 </style>

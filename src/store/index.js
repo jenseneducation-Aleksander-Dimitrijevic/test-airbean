@@ -12,6 +12,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    activeOrder: {},
+    loading: false, 
     menu:[],
     showNavbar:false,
     cart:[]
@@ -31,7 +33,14 @@ export default new Vuex.Store({
         quantity:1
       })
 
-    }
+    },
+    orderStatus(state,order){
+      state.activeOrder = order;
+    },
+    emptyCart(state){
+      state.cart = []
+    },
+   
   },
   actions: {
     async getMenuList(content){
@@ -39,8 +48,37 @@ export default new Vuex.Store({
        content.commit('displayMenu',menuList.menu)
       },500)
     },
-    additemTocart(content,item){
-      content.commit('additem',item)
+    additemTocart(context,item){
+      context.commit('additem',item)
+    },
+    async sendOrder(context){
+      console.log("Your order is send")
+
+      let order = {
+        timeStamp: Date.now(),
+        items: context.state.cart
+      }
+      
+      //Remove order
+      context.state.activeOrder = {}
+
+      //show loader
+      context.state.loading = true
+
+      // Post and fake order return
+      let response = await new Promise((resolve) => {
+        setTimeout(() => {
+          order.ETA = 13
+          order.orderNr = "12DV12F"
+          resolve(order)
+        },6000)
+      })
+
+      context.state.loading = false
+      context.state("orderStatus", response)
+
+    // Empty cart
+    context.commit('emptyCart')
     }
   },
   getters:{
