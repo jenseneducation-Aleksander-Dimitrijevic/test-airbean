@@ -1,6 +1,7 @@
 <template>
 
 <div class="main">
+  <Menuicon />
   <h1>Vårt Kaffe</h1>
  <p class="intro">Crow's nest schooner bilge water fluke matey yo-ho-ho topgallant holystone heave to swab.
    Corsair measured fer yer chains bounty spyglass Gold Road weigh anchor ahoy topsail Davy 
@@ -25,7 +26,7 @@ Jolly Roger fire ship prow mizzen starboard barkadeer gabion yo-ho-ho bounty log
 </template>
 
 <script>
-import Menuicon from '../components/Menuicon'
+import Menuicon from './../components/Menuicon'
 export default {
   name:'About',
   components:{
