@@ -21,7 +21,7 @@
 
 <style lang="scss">
   .menuicon {
-        background: white;
+        background-color: white;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,6 +31,8 @@
         border-radius:100%;
         margin-top:40px;
         margin-left:30px;
+        
+        
      }
      .menuiconimage{
          width:200%;
