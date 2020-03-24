@@ -5,11 +5,6 @@ import menuList from '../../api/data/menu.json'
 
 Vue.use(Vuex)
 
-// import state from './state'
-// import * as actions from './actions'
-// import * as mutations from './mutations'
-// import * as getters from './getters'
-
 export default new Vuex.Store({
   state: {
     activeOrder: {},
@@ -33,8 +28,14 @@ export default new Vuex.Store({
         quantity:1
       })
     },
+    orderStatus(state,order){
+      state.activeOrder = order
+    },
+    emptyCart(state){
+      state.cart = []
+    },
     updateItemInCart(state,id){
-      let index = state.cart.findIndex(item=> item.id === id)
+      let index = state.cart.findIndex(item => item.id === id)
       state.cart[index].quantity++;
 
     },
@@ -44,25 +45,49 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async getMenuList(content){
+    async getMenuList(context){
       setTimeout(()=> {
-       content.commit('displayMenu',menuList.menu)
+       context.commit('displayMenu',menuList.menu)
       },500)
     },
-    additemTocart(content,item){
-      let checkItem = content.state.cart.filter(check => check.id === item.id)
+    additemTocart(context,item){
+      let checkItem = context.state.cart.filter(check => check.id === item.id)
       
       if(checkItem.length > 0){
-        content.commit('updateItemInCart',checkItem[0].id)
+        context.commit('updateItemInCart',checkItem[0].id)
       }else{
-        content.commit('additem',item)} 
-    }
-  },
-  // getters:{
-  //   cartItemCount(state){
-  //     return state.cart.length
-  //   }
-  // }
+        context.commit('additem',item)} 
+    },
+    async sendOrder(context){
+      console.log("Order is send")
+
+      let order = {
+        timeStamp: Date.now(),
+        item: context.state.cart
+      }
+      //remove
+      context.state = {}
+
+      //show loader
+      context.state.loading = true
+
+      let response = await new Promise((resolve) => {
+
+      setTimeout(() => {
+
+        order.ETA = 13
+        order.orderNr = 'KUK6666I'
+        resolve(order)
+      
+      },6000)
+    })
+      context.state.loading = false
+      context.commit('orderStatus', response)
+
+     //empty cart
+     context.commit("emptyCart")
+    
+  }
+}  
+
 })
-
-

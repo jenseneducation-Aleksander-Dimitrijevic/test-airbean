@@ -1,31 +1,32 @@
 <template>
     <div class="status">
-        <div class="loader" v-if="loding">
+        <div class="loader" v-if="loading">
             <img src="./../assets/graphics/loader.png" alt="loading!">
         </div>
         <p class="order" v-if="order.orderNr">Ordernummer <span>#{{order.orderNr}}</span> </p>
         <img v-if="order.orderNr" src="./../assets/graphics/drone.svg" alt="drone">
         <h1 v-if="order.orderNr"> Din beställing är påväg! </h1>
         <h1 v-if="!order.orderNr && !loading"> Här ser du din beställing</h1>
-        <p class="eta" v-if=" order.orderNr"> ETA {{ order.ETA }} min</p>
+        <p class="eta" v-if="order.orderNr"> ETA {{ order.ETA }} min</p>
         <a href="#" class="btn" @click="$router.push('/menu')">OK, Cool!</a>
     </div>
 </template>
 
 <script>
 export default {
-computed: {
-    order(){
-        return this.$store.state.activeOrder;
-    },
-    loading(){
-        return this.$store.state.loading;
-    }
+    name: 'Status',
+    computed: {
+        order(){
+            return this.$store.state.activeOrder;
+        },
+        loading(){
+            return this.$store.state.loading;
+        }
 }        
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped >
 @import url('https://fonts.googleapis.com/css?family=PT+Serif:700|Work+Sans:400,600&display=swap');
 .status{
     background: #E5674E;
@@ -56,11 +57,9 @@ computed: {
     h1{
     font-size: 2.5rem;
     margin: 1rem 0;
-    font-family: 'Work Sans' ;
+    padding: 1.5rem;
     }
-    p{
-       padding: 1.5rem;
-    }
+    
     .eta {
         font-size: 1.1rem;
         margin: 2rem;
