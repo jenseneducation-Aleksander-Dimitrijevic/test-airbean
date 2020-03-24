@@ -8,7 +8,7 @@
       <h3>Total<span class="dots"></span>{{ totalamount }} kr </h3>
       <p> Inkl moms + drönarleverans </p>
     </div>
-    <button class="button" @click="sendOrder">Take My Money</button>
+    <a href class="button" @click="sendOrder">Take My Money</a>
   </div>
 </template>
 
@@ -42,23 +42,44 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+
  .cart{
    position:fixed;
    background:white;
-   z-index:99;
-   width:400px;
-   margin:200px -400px 0 0;
-   border-radius: .3rem;
+   top: 4rem;
+   right: 1rem;
+   left: 1rem;
+   
+   
+  //  transform: translate(0%);
+   width: calc(100vh -4rem);
+   margin: 1rem;
+   z-index: 999;
+   box-shadow: 0 0 1rem rgba(0,0,0,.2), 0 0 4rem rgba(0,0,0,.2) ;
+   
     
+    &after {
+     content: '';
+        position: absolute;
+        top: 0;
+        left: 91%;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-bottom-color: white;
+        border-top: 0;
+        margin-left: -8px;
+        margin-top: -8px;
+        border-radius: 2px;
+    }
    .totalamount{
      display:flex;
      flex-direction:column;
-     margin:0 0 0 45px;
+     margin: 2rem 1rem;
      h3{
-       display:flex;
-       font-size:24px;
-       
-       .dots{
+       display: flex;
+       margin:0;
+      .dots{
          display:flex;
          justify-content:center;
          align-items:center;
@@ -78,14 +99,17 @@ export default {
    .button{
         display: flex;
         font-size: 1.4rem;
+        width: 90%;
+        align-items:center;
         text-decoration: none;
         height: 4rem;
-        margin: 10px auto;
+        margin: .7rem 1rem;
         justify-content: center;
         align-items: center;
         color: #eee;
-        border-radius: 15px;;
+        border-radius: 50px;;
         background:black;
+        
 
         &:active {
             color: white;

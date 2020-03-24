@@ -7,7 +7,7 @@
     </div>
     <h3 class="itemtitle">{{ item.title}}<span class="dots"></span></h3>
     <p class="itemdesc">{{ item.desc}}</p>
-    <h3 class="itemprice">{{ item .price }}</h3>
+    <h3 class="itemprice">{{ item .price }} kr</h3>
 
  
   </div>
@@ -32,14 +32,18 @@ export default {
 <style lang="scss">
 .menuitem{
   display:grid;
-  max-width:420px;
-  grid-template-columns: 3rem 1fr 2rem;
-  grid-template-rows:1.2rem 1.2 rem;
-  margin-left:30px;
+  // max-width:420px;
+  grid-template-columns: 3rem 1fr 4rem;
+  grid-template-rows:1.5rem 1.5rem;
+  margin: 2rem 0 2rem 0 ;
+
+  
+  
   .additem{
     display:flex;
     grid-row:1/2;
     grid-column: 1/2;
+    
     button{
       display:flex;
       justify-content: center;
@@ -54,12 +58,13 @@ export default {
     }
   }
   .itemtitle{
+    margin: 0;
+    padding: 0;
     grid-column: 2/3;
     grid-row:1/2;
     display:flex;
-    margin:10px;
-    font-size:24px;
-    font:600;
+    font-size:1.5rem;
+    
     .dots{
       display:flex;
       flex:1;
@@ -68,19 +73,22 @@ export default {
     }
   }
   .itemdesc{
+    margin: 0;
+    padding: 0;
     grid-column:2/3 ;
     grid-row:2/3;
     display:flex;
-    margin:10px;
     font-size:18px;
   }
   .itemprice{
     grid-column:3/4 ;
     grid-row:1/2;
-    margin:10px 0;
+    margin:0;
+    padding: 0;
     display:flex;
     font-size:24px;
     font-display: bold;
   }
+ 
 }
 </style>
