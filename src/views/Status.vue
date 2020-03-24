@@ -95,11 +95,5 @@ h1{
     font-size: 2.5rem;
     margin: 1rem 0;
 }
-//animations
- .fade-enter-active, .fade-leave-active {
-    transition: opacity .2s;
-  }
-  .fade-enter, .fade-leave-to  {
-    opacity: 0;
-  }
+
 </style>

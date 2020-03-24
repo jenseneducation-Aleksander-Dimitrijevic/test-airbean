@@ -1,7 +1,7 @@
 <template>
     <div class="carticon">
         <div class="count" >{{ cartLength }}</div>
-        <img src="./../assets/graphics/bag.svg" alt="Carticon" @click="showCart =! showCart" />
+        <img src="./../assets/graphics/bag.svg" alt="Carticon" @click="showCart = !showCart" />
         <Cart v-if="showCart" />
 
     </div>

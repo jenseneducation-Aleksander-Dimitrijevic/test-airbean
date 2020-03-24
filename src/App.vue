@@ -24,13 +24,16 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+    @import url('https://fonts.googleapis.com/css?family=PT+Serif:700|Work+Sans:400,600&display=swap');
+}
 
 #app {
-  font-family:sans-serif;
+  font-family:'Work Sans';
   text-align: center;
   color: #2c3e50;
   background: #F3E4E1;
-  height: 130vh;
+  // height: 130vh;
   max-width: 480px;
   margin: 0 auto;
   .home{

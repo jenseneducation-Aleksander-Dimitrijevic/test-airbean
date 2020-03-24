@@ -30,15 +30,17 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
+  #app{
+      height: 100vh;
+  }
   .menu{
-      height:130vh;
-      max-width:480px;
+      height:100vh;
       margin: 0 auto;
-      padding-top:1.4rem;
+      padding: 1rem 1rem;
       h1{
-         font-size:32px;
-         margin-top:75px;
+         font-size:1.5rem;
+         margin-top:1rem;
       }
       box-sizing: border-box;
       background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
@@ -48,6 +50,8 @@ export default {
 
       
   }
+
+
 
 </style>
 
