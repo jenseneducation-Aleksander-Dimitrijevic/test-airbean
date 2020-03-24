@@ -1,7 +1,7 @@
 <template>
 
 <div class="main">
-  <Menuicon />
+  <Menuicon :type="'menuicon'" />
   <h1>Vårt Kaffe</h1>
  <p class="intro">Crow's nest schooner bilge water fluke matey yo-ho-ho topgallant holystone heave to swab.
    Corsair measured fer yer chains bounty spyglass Gold Road weigh anchor ahoy topsail Davy 
@@ -42,52 +42,48 @@ export default {
 <style scoped>
 
 body {
-    margin: 0;
-    font-family: 'Work Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
-    #app {
-        max-width: 480px;
-        margin: 0 auto;
-  }
-
-        .main {
-            padding: 6rem 1.3rem;
-            box-sizing: border-box;
-            background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
-            background-position: top center, bottom center;
-            background-repeat: no-repeat, no-repeat;
-            background-size: 100%, 100%;
-            background-color: #F3E4E1;
-        }
-    h1, h2, h3 {
-    font-family: 'PT Serif', serif;
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+}
+ .menuicon{
+   margin-top:-20px;
+ }
+.main {
+  padding: 6rem 1.3rem;
+  box-sizing: border-box;
+  background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
+  background-position: top center, bottom center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, 100%;
+  background-color: #F3E4E1;
+}
+h1, h2, h3 {
+font-family: 'PT Serif', serif;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin: 1rem 0;
+  font-size: 2.5rem;
+  margin: 1rem 0;
 }
 
 
 h2 {
-    font-size: 2rem;
-    margin: 1rem 0;
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 h3 {
     font-size: 1.4rem;
     margin: 0;
 }
-/* .about{
-  text-align: center;
-  padding: 10px;
-  line-height: 1.5em;
-  width: 50%;
-} */
 h1,h4{
   margin: 50px 0 0 0;
 }
@@ -98,47 +94,26 @@ p{
 }
 
 p {
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 160%;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 160%;
 }
 .b{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-    .intro {
-        font-weight: 600;
-        font-size: 1.1rem;
-        line-height: 140%;
-        margin: 0;
-    }
+.intro {
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 140%;
+  margin: 0;
+}
     
-    img{
-      border-radius: 50%;
-    }
-
-
-
-
-
-
-
-.about{
-      height:130vh;
-      max-width:480px;
-      margin: 0 auto;
-      padding-top:1.4rem;
-      text-align:center;
-      font-size:22px;
-      line-height:1.5rem;
-      box-sizing: border-box;
-      background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
-      background-position: top center, bottom center;
-      background-repeat: no-repeat, no-repeat;
-      background-size: 100%, 100%;
-      }
+img{
+  border-radius: 50%;
+}
 
 </style>

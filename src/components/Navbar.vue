@@ -1,9 +1,9 @@
 <template>
     <div class="menu-nav">
         <Menuicon :type="'close'" />
-        <router-link class="links" to="/menu"> Meny </router-link>
-        <router-link class="links" to="/about"> Vårt Kaffe </router-link>
-        <router-link class="links" to="/status">Orderstatus </router-link>
+        <div class="links" @click="directTo('/menu')"> Meny </div>
+        <div class="links" @click="directTo('/about')"> Vårt Kaffe </div>
+        <div class="links" @click="directTo('/status')">Orderstatus </div>
 
     </div>
 </template>
@@ -14,6 +14,14 @@
         name:'Navbar',
         components:{
             Menuicon
+        },
+        methods:{
+            directTo(route){
+                this.$store.commit('closeNavbar')
+                if(route !== this.$route.path){
+                    this.$router.push(route)
+                }
+            }
         }       
     }
 </script>
@@ -35,6 +43,10 @@
         font-size:46px;
         margin:100px;
         text-decoration: none;
+        &:hover{
+            color:brown;
+            font-size:56px;
+        }
       }    
   }
 

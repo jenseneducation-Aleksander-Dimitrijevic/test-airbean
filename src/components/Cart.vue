@@ -46,13 +46,13 @@ export default {
  .cart{
    position:fixed;
    background:white;
-   top: 4rem;
+   top: 7rem;
    right: 1rem;
    left: 1rem;
    
    
   //  transform: translate(0%);
-   width: calc(100vh -4rem);
+   width: calc(100vh -10rem);
    margin: 1rem;
    z-index: 999;
    box-shadow: 0 0 1rem rgba(0,0,0,.2), 0 0 4rem rgba(0,0,0,.2) ;
