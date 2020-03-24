@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Menu from '../views/Menu.vue'
 import Status from '../views/Status.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     name: 'Status',
     component: Status
   },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
+  }
 ]
 
 const router = new VueRouter({
