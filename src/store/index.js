@@ -60,7 +60,6 @@ export default new Vuex.Store({
     },
     async sendOrder(context){
       console.log("Order is send")
-
       let order = {
         timeStamp: Date.now(),
         item: context.state.cart
