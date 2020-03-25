@@ -2,9 +2,12 @@
     <div class="menu-nav">
         <Menuicon :type="'close'" />
         <div class="links" @click="directTo('/menu')"> Meny </div>
+        <hr>
         <div class="links" @click="directTo('/about')"> Vårt Kaffe </div>
+        <hr>
+        <div class="links" @click="directTo('/profile')">Min Profile </div>
+        <hr>
         <div class="links" @click="directTo('/status')">Orderstatus </div>
-
     </div>
 </template>
 
@@ -28,8 +31,8 @@
 
 <style lang="scss">
  .menu-nav{
-      height:130vh;
-      width:480px;
+      width: 100vw;
+      height: 100vh;
       margin: 0 auto;
       z-index:100;
       position:fixed;
@@ -40,13 +43,19 @@
         flex-direction:column;
         justify-content: center;
         align-items:center;
-        font-size:46px;
-        margin:100px;
+        font-size: 2.4rem;
+        padding: 2rem;
+        margin:1rem;
         text-decoration: none;
+        color: white;
         &:hover{
             color:brown;
             font-size:56px;
         }
+      }
+      hr{
+          width: 150px;
+          background: darkgray;
       }    
   }
 
