@@ -9,14 +9,20 @@ router.get('/', async (req, res) => {
     menu.pipe(res);
 });
 
-router.post('/', async (req, res) => {
+router.post('/order/:uuid', async (req, res) => {
+
+    let uuid = req.params.uuid
     const order = {
         eta: generateETA(),
         orderNr: generateOrderNr(),
+        items:req.body.items,
+        total:0,
+        timeStamp: Date.now()
     }
+    console.log(order)
 
     setTimeout(() => {
-        res.send(order);
+        res.send(JSON.stringify(order));
     }, 2000);
 });
 
