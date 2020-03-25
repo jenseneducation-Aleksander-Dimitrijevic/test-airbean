@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
-import menuList from '../../api/data/menu.json'
+
+const API = 'http://localhost:5000/api/beans'
 
 Vue.use(Vuex)
 
@@ -29,11 +31,12 @@ export default new Vuex.Store({
       })
     },
     orderStatus(state,order){
+      console.log("här kommer ordern")
       state.activeOrder = order
     },
-    emptyCart(state){
-      state.cart = []
-    },
+    // emptyCart(state){
+    //   state.cart = []
+    // },
     updateItemInCart(state,id){
       let index = state.cart.findIndex(item => item.id === id)
       state.cart[index].quantity++;
@@ -46,9 +49,9 @@ export default new Vuex.Store({
   },
   actions: {
     async getMenuList(context){
-      setTimeout(()=> {
-       context.commit('displayMenu',menuList.menu)
-      },500)
+      let resp = await axios.get(API)
+       context.commit('displayMenu',resp.data.menu)
+      
     },
     additemTocart(context,item){
       let checkItem = context.state.cart.filter(check => check.id === item.id)
@@ -61,30 +64,42 @@ export default new Vuex.Store({
     async sendOrder(context){
       console.log("Order is send")
       let order = {
-        timeStamp: Date.now(),
-        item: context.state.cart
+        items: context.state.cart
       }
-      //remove
-      context.state = {}
-
-      //show loader
-      context.state.loading = true
-
-      let response = await new Promise((resolve) => {
-
-      setTimeout(() => {
-
-        order.ETA = 13
-        order.orderNr = 'KUK6666I'
-        resolve(order)
       
-      },6000)
-    })
-      context.state.loading = false
-      context.commit('orderStatus', response)
+      
 
-     //empty cart
-     context.commit("emptyCart")
+     
+
+     let uuid = await localStorage.getItem('airbeans')
+    
+      try{
+        context.state.loading = true
+        let resp = await axios.post(`${API}/order/${uuid}`,order)
+        context.state.loading = false
+        context.commit('orderStatus', resp.data)
+
+      }catch(err){
+        console.error(err)
+      }
+
+     
+      //remove
+      context.state.cart = {}
+
+    //  empty cart
+    //  context.commit("emptyCart")
+    
+  },
+  async findUuid(){
+    try{
+      if(localStorage.getItem('airbeans') === null){
+        let uuid = await axios.get(`${API}/key`)
+        localStorage.setItem('airbeans', uuid.data.key)
+      }
+    } catch(err){
+      console.error(err)
+    } 
     
   }
 }  

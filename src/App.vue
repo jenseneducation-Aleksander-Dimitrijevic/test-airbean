@@ -18,6 +18,7 @@ export default {
   },
   //before mount is used to fetch the data from the menu json file
   beforeMount(){
+    this.$store.dispatch('findUuid')
     this.$store.dispatch('getMenuList')
   }
 }
