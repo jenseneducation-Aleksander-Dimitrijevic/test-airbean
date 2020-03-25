@@ -1,13 +1,13 @@
 <template>
     <div class="menu-nav">
         <Menuicon :type="'close'" />
-        <div class="links" @click="directTo('/menu')"> Meny </div>
+        <a href="/menu" class="links" @click="$router.push('/menu')"> Meny </a>
         <hr>
-        <div class="links" @click="directTo('/about')"> Vårt Kaffe </div>
+        <a href="/about" class="links" @click="$router.push('/about')"> Vårt Kaffe </a>
         <hr>
-        <div class="links" @click="directTo('/profile')">Min Profile </div>
+        <a href="/Profile" class="links" @click="$router.push('/profile')">Min Profile </a>
         <hr>
-        <div class="links" @click="directTo('/status')">Orderstatus </div>
+        <a href="/status" class="links" @click="$router.push('/status')">Orderstatus </a>
     </div>
 </template>
 
@@ -18,14 +18,7 @@
         components:{
             Menuicon
         },
-        methods:{
-            directTo(route){
-                this.$store.commit('closeNavbar')
-                if(route !== this.$route.path){
-                    this.$router.push(route)
-                }
-            }
-        }       
+           
     }
 </script>
 
