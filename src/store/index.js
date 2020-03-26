@@ -68,11 +68,7 @@ export default new Vuex.Store({
         items: context.state.cart
       }
       
-      
-
-     
-
-     let uuid = await localStorage.getItem('airbeans')
+      let uuid = await localStorage.getItem('airbeans')
     
       try{
         context.state.loading = true
@@ -83,26 +79,24 @@ export default new Vuex.Store({
       }catch(err){
         console.error(err)
       }
-
-     
       //remove
       context.state.cart = []
 
-    //  empty cart
-    //  context.commit("emptyCart")
+      //  empty cart
+      //  context.commit("emptyCart")
     
   },
-  async findUuid(){
-    try{
-      if(localStorage.getItem('airbeans') === null){
-        let uuid = await axios.get(`${API}/key`)
-        localStorage.setItem('airbeans', uuid.data.key)
-      }
-    } catch(err){
-      console.error(err)
-    } 
-    
-  }
-}  
+    async findUuid(){
+      try{
+        if(localStorage.getItem('airbeans') === null){
+          let uuid = await axios.get(`${API}/key`)
+          localStorage.setItem('airbeans', uuid.data.key)
+        }
+      } catch(err){
+        console.error(err)
+      } 
+      
+    }
+  }  
 
 })

@@ -1,10 +1,10 @@
 <template>
     <div class="menu-nav" :type="'close'">
         <Menuicon :type="'close'" />
-      <router-link  class="links" to="/menu" >Meny</router-link>
-        <router-link class="links" to="/about">Vår kaffe</router-link>
-        <router-link class="links" to="/profile">Min profil</router-link>
-        <router-link class="links" to="/status">Orderstatus </router-link>
+      <router-link @click.native="close" class="links" to="/menu" >Meny</router-link>
+        <router-link @click.native="close" class="links" to="/about">Vår kaffe</router-link>
+        <router-link @click.native="close" class="links" to="/profile">Min profil</router-link>
+        <router-link @click.native="close" class="links" to="/status">Orderstatus </router-link>
     </div>
 </template>
 
@@ -31,6 +31,8 @@
       margin: 0 auto;
       z-index:100;
       position:fixed;
+      top: 0;
+      left: 0;  
       padding:0;
       background:black; 
       .links{
@@ -51,7 +53,10 @@
       hr{
           width: 150px;
           background: darkgray;
-      }    
+      } 
+        .menuiconimage{
+         width:30px;
+     }   
   }
 
 </style>

@@ -35,7 +35,7 @@
         
      }
      .menuiconimage{
-         width:200%;
+         width:100px;
      }
 
 </style>
