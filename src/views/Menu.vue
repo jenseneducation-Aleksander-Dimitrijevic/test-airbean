@@ -31,12 +31,10 @@ export default {
 </script>
 
 <style lang="scss" >
-  #app{
-      height: 100vh;
-  }
   .menu{
       height:100vh;
-      margin: 0 auto;
+    //   margin: 0 auto;
+      width:100%;  
       padding: 1rem 1rem;
       h1{
          font-size:1.5rem;
