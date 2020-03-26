@@ -52,6 +52,7 @@ body {
 #app {
   max-width: 480px;
   margin: 0 auto;
+  
 }
  .menuicon{
    margin-top:-20px;
@@ -64,6 +65,7 @@ body {
   background-repeat: no-repeat, no-repeat;
   background-size: 100%, 100%;
   background-color: #F3E4E1;
+  color: black;
 }
 h1, h2, h3 {
 font-family: 'PT Serif', serif;

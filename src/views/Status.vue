@@ -43,9 +43,13 @@ export default {
         justify-self: center;
         flex-direction: column;
         margin: 4rem 0;
+        img{
+            width: 4rem;
+            animation: none;
+        }
     }
-    .img{
-        width: 4rem;
+    img{
+        width: 300px;
         animation: hover 5s linear infinite;
     }
     @keyframes hover {
@@ -55,6 +59,7 @@ export default {
      75% { transform: translateY(.25rem) rotateZ(-1deg); }
     100% { transform: translateY(0) rotateZ(0deg); }    
     }
+    
     h1{
     font-size: 2.5rem;
     margin: 1rem 0;

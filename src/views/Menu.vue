@@ -33,12 +33,13 @@ export default {
 <style lang="scss" >
   .menu{
       height:100vh;
-    //   margin: 0 auto;
+      color: black;
       width:100%;  
       padding: 1rem 1rem;
       h1{
          font-size:1.5rem;
          margin-top:1rem;
+         
       }
       box-sizing: border-box;
       background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
