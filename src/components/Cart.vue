@@ -8,7 +8,7 @@
       <h3>Total<span class="dots"></span>{{ totalamount }} kr </h3>
       <p> Inkl moms + drönarleverans </p>
     </div>
-    <a href class="button" @click="sendOrder">Take My Money</a>
+    <a href class="button" @click.prevent="sendOrder">Take My Money</a>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
   methods:{
     sendOrder(){
       this.$store.dispatch('sendOrder')
-      this.$router.push('/status')
+     this.$router.push('/status')
     }
   }
 }

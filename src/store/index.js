@@ -32,6 +32,7 @@ export default new Vuex.Store({
     },
     orderStatus(state,order){
       console.log("här kommer ordern")
+      console.log(order);
       state.activeOrder = order
     },
     // emptyCart(state){
@@ -85,7 +86,7 @@ export default new Vuex.Store({
 
      
       //remove
-      context.state.cart = {}
+      context.state.cart = []
 
     //  empty cart
     //  context.commit("emptyCart")
