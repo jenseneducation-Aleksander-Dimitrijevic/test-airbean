@@ -55,7 +55,7 @@ import Cart from './Cart'
     padding:2rem;       
     border-radius:100%;
     float:right;
-    margin-top:-73px;
+    margin-top:-65px;
     margin-right:30px;
     .count{
     position: absolute;
