@@ -1,9 +1,12 @@
 <template>
     <div class="menu-nav" :type="'close'">
         <Menuicon :type="'close'" />
-      <router-link @click.native="close" class="links" to="/menu" >Meny</router-link>
+        <router-link @click.native="close" class="links" to="/menu" >Meny</router-link>
+        <hr class="lines">
         <router-link @click.native="close" class="links" to="/about">Vår kaffe</router-link>
+        <hr class="lines">
         <router-link @click.native="close" class="links" to="/profile">Min profil</router-link>
+        <hr class="lines">
         <router-link @click.native="close" class="links" to="/status">Orderstatus </router-link>
     </div>
 </template>
@@ -26,9 +29,8 @@
 
 <style lang="scss">
  .menu-nav{
-      width: 100vw;
-      height: 100vh;
-      margin: 0 auto;
+      width: 100%;
+      height: 100%;
       z-index:100;
       position:fixed;
       top: 0;
@@ -50,9 +52,10 @@
             font-size:56px;
         }
       }
-      hr{
+      .lines{
           width: 150px;
           background: darkgray;
+          margin: auto;
       } 
         .menuiconimage{
          width:30px;

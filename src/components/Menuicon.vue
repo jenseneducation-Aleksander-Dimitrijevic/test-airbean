@@ -25,11 +25,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: .8rem;
-        height:0.8rem;
-        padding:1.6rem;       
+        width: 10px;
+        height:10px;
+        padding:2rem;       
         border-radius:100%;
-        margin-top:40px;
+        margin-top:70px;
         margin-left:30px;
         
         

@@ -50,12 +50,12 @@ import Cart from './Cart'
     display: flex;
     justify-content: center;
     align-items: center;
-    width: .8rem;
-    height:0.8rem;
-    padding:1.6rem;       
+    width: 10px;
+    height:10px;
+    padding:2rem;       
     border-radius:100%;
     float:right;
-    margin-top:-65px;
+    margin-top:-73px;
     margin-right:30px;
     .count{
     position: absolute;
