@@ -19,11 +19,9 @@ import Login from "@/components/Login.vue"
         }
     },
     created(){
-        if(localStorage.getItem('cookie-consent')){
+        if(localStorage.getItem('airbeans')){
            this.show = true
-    }else{
-           this.$router.push('profile')
-    }
+    } 
     },
     components: {
         Login,

@@ -7,7 +7,7 @@
         <img v-if="order.orderNr" src="./../assets/graphics/drone.svg" alt="drone">
         <h1 v-if="order.orderNr"> Din beställing är påväg! </h1>
         <h1 v-if="!order.orderNr && !loading"> Här ser du din beställing</h1>
-        <p class="eta" v-if="order.orderNr"> ETA {{ order.ETA }} min</p>
+        <p class="eta" v-if="order.orderNr"> ETA {{ order.eta }} min</p>
         <a href="#" class="btn" @click="$router.push('/menu')">OK, Cool!</a>
     </div>
 </template>
@@ -34,7 +34,8 @@ export default {
     color: white;
     text-align: center;
     .order{
-        margin: 2rem 0;
+        // margin: 2rem;
+        padding: 2rem;
     }
     .loader{
         display: flex;
