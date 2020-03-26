@@ -30,7 +30,7 @@ export default {
 }
 *{
   box-sizing: border-box;
-  // padding: 0;
+  padding: 0;
   margin: 0;
 }
 #app {
@@ -40,7 +40,7 @@ export default {
   background: #F3E4E1;
   box-sizing: border-box;
   max-width: 480px;
-  margin: 0 auto; 
+  margin: 0; 
   
 }
 </style>

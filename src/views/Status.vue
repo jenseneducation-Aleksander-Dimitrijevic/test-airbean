@@ -33,8 +33,9 @@ export default {
     height: 100vh;
     color: white;
     text-align: center;
+    padding: 1rem;
+    
     .order{
-        // margin: 2rem;
         padding: 2rem;
     }
     .loader{
@@ -71,22 +72,21 @@ export default {
         margin: 2rem;
     }
      .btn {
-    display: flex;
-    max-width: 14rem;
-    width: 100%;
-    font-family: 'PT Serif', serif;
-    font-size: 1.4rem;
-    text-decoration: none;
-    height: 4rem;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    color: #222;
-    border-radius: 999rem;
-    background: rgba($color: #FFFFFF, $alpha: .8);
-
-    &:active {
-      background: white;
+        display: flex;
+        max-width: 14rem;
+        width: 100%;
+        font-family: 'PT Serif', serif;
+        font-size: 1.4rem;
+        text-decoration: none;
+        height: 4rem;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        color: #222;
+        border-radius: 999rem;
+        background: rgba($color: #FFFFFF, $alpha: .8);
+        &:active {
+        background: white;
     }
   }
     

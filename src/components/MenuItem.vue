@@ -54,7 +54,7 @@ export default {
       background: black;
     }
     img{
-      width:100%;
+      width:30px;
     }
   }
   .itemtitle{
