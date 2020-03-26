@@ -39,8 +39,8 @@ import Login from "@/components/Login.vue"
       background-image: url('../assets/graphics/graphics-header.svg');
       background-position: top center, bottom center;
       background-repeat: no-repeat, no-repeat;
-      background-size: 100%, 100%;
-    background-color: #222;
+    background-size: 100%, 100%;
+     background-color: #222;
     height: 100vh;
     img{
         
