@@ -44,8 +44,6 @@ export default {
 body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -75,7 +73,6 @@ h1 {
   font-size: 2.5rem;
   margin: 1rem 0;
 }
-
 
 h2 {
   font-size: 2rem;
