@@ -13,8 +13,13 @@ export default new Vuex.Store({
     loading: false, 
     menu:[],
     showNavbar:false,
+
+    cart:[]
+    user:{[]}
+
     cart:[],
     orderHistory:[]
+
   },
   mutations: {
     displayMenu(state,menu){
@@ -104,6 +109,7 @@ export default new Vuex.Store({
       
     }
   },
+
   async getorders(context){
     let uuid = await localStorage.getItem('airbeans')
     try{
@@ -115,5 +121,6 @@ export default new Vuex.Store({
     }
 
   }  
+
 
 })

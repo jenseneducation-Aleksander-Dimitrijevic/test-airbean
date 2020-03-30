@@ -44,6 +44,7 @@ router.get('/key', (req, res) => {
     res.send(JSON.stringify(key));
 })
 
+
 router.get('/profile/:uuid', async (req,res) => {
     const id=req.params.uuid
     const getorders = await Orderdata.find({id:id})
@@ -52,6 +53,7 @@ router.get('/profile/:uuid', async (req,res) => {
 
     //Skicka tillbaka till frontend
     res.send(JSON.stringify(getorders));
+
 })
 
 module.exports = router

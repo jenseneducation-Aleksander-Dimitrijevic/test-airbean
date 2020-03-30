@@ -5,8 +5,8 @@
 <div class="profile">
 <div class="profile-info">
      <img class="img" src="../assets/graphics/profile.svg" alt="profileicon">
-    <h1>Namnet Namnsson</h1>
-    <h3>NamnetNamnsson@mail.se</h3>
+    <h1>{{name}}</h1>
+    <h3>{{email}}</h3>
 </div>
 <div class="order-info">
     <h1>Orderhistorik</h1>
@@ -20,7 +20,7 @@
     </div>
 </div>
 </div>
-<div class="login" v-if="show !== true">
+<div class="login" v-if="show == true">
 </div>    
 <Login v-if="show == false"/>
 
