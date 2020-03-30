@@ -33,4 +33,14 @@ router.get('/key', (req, res) => {
     res.send(JSON.stringify(key));
 })
 
+router.get('/userInfo',(req,res)=>{
+    const usernames = {
+        name: req.body.name,
+        email: req.body.email
+
+    }
+    res.send('usernames')
+    
+})
+
 module.exports = router

@@ -14,6 +14,7 @@ export default new Vuex.Store({
     menu:[],
     showNavbar:false,
     cart:[]
+    user:{[]}
   },
   mutations: {
     displayMenu(state,menu){
@@ -97,6 +98,7 @@ export default new Vuex.Store({
       } 
       
     }
-  }  
+  },
+ 
 
 })

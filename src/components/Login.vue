@@ -4,14 +4,14 @@
 
     <div class="login-div">
       <h1>Välkomen till AirBean-familjen!</h1>
-      <h2>Genom ayt skapa ett konnto
+      <h2>Genom att skapa ett konnto
         nedan kan du skapa och se din orderhistorik
       </h2>
     <form @submit.prevent="login">
-      <label for="email">Email</label>  
-      <input placeholder="Password" type="email" class="email">
-      <label for="password">password</label>
-      <input placeholder="password" type="password">
+      <label for="name">Name</label>  
+      <input v-model="name" placeholder="name" type="text" class="name">
+      <label for="email">Email</label>
+      <input v-model="email" placeholder="email" type="email">
       <button @click="$router.push('/menu')">Brew me a cup!</button>
       <label for="gdpr">GDPR</label>
        <input class="gdpr" type="radio" name="" id="">
@@ -27,10 +27,14 @@ export default {
     msg: String
   },
   methods:{
+    
     login(){  
     localStorage.setItem('cookie-consent', true)
-    this.$router.push('/profile')  
-    }
+    this.$router.push('/profile')
+
+    
+    },
+    
   }
 };
 </script>
