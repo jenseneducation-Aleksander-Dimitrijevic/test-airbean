@@ -53,7 +53,6 @@ router.get('/profile/:uuid', async (req,res) => {
 
     //Skicka tillbaka till frontend
     res.send(JSON.stringify(getorders));
-
 })
 
 module.exports = router

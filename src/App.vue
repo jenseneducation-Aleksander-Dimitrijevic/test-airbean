@@ -20,6 +20,7 @@ export default {
   beforeMount(){
     this.$store.dispatch('findUuid')
     this.$store.dispatch('getMenuList')
+    this.$store.dispatch('getorders')
   }
 }
 </script>

@@ -3,6 +3,9 @@
   <Menuicon :type="'menuicon'" />
 
 <div class="profile">
+    <div class="login" v-if="show == false">
+<Login v-if="show == false"/>
+</div>  
 <div class="profile-info">
      <img class="img" src="../assets/graphics/profile.svg" alt="profileicon">
     <h1>{{user.name}}</h1>
@@ -11,7 +14,7 @@
 <div class="order-info">
     <h1>Orderhistorik</h1>
     <div class="orders">
-    <h2>ordrar</h2>
+    <h2>{{order.orderHistory}}</h2>
     <h4>ordersumma</h4>
     </div>
     <hr>
@@ -20,9 +23,7 @@
     </div>
 </div>
 </div>
-<div class="login" v-if="show == true">
-</div>    
-<Login v-if="show == false"/>
+  
 
 </div>
 </template>
@@ -40,6 +41,9 @@ import Login from "@/components/Login.vue"
     computed:{
         user(){
             return this.$store.state.user
+        },
+        order(){
+            return this.$store.state.orderHistory
         }
     },
     created(){
@@ -61,12 +65,12 @@ body {
   margin: 0;
 }
 
-
+/* 
 #app {
   max-width: 480px;
   margin: 0 auto;
   
-}
+} */
 
 
  .menuicon{
@@ -74,7 +78,8 @@ body {
  }
 .main {
   padding: 6rem 1.3rem;
-  box-sizing: border-box;
+  height: 100vh;
+  /* box-sizing: border-box; */
   background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
   background-position: top center, bottom center;
   background-repeat: no-repeat, no-repeat;
@@ -151,9 +156,11 @@ hr{
 display: flex;
 background-color: #2f2926;
 height: 100vh;
-display: grid;
-grid-template-columns: 2rem 2rem 2rem;
-grid-template-rows: 1fr 1fr;
+top: 0;
+display: flex;
+z-index: 998;
+/* grid-template-columns: 2rem 2rem 2rem;
+grid-template-rows: 1fr 1fr; */
 background-color: #F3E4E1;
 }
 </style>
