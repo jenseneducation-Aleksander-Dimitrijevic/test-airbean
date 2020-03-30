@@ -22,7 +22,7 @@
 </div>
 <div class="login" v-if="show == true">
 </div>    
-<Login v-if="show == true"/>
+<Login v-if="show == false"/>
 
 </div>
 </template>
