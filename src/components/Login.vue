@@ -2,7 +2,7 @@
   <div class="wrapper">
   <Menuicon :type="'menuicon'" />
 
-    <div class="login-div">
+    <div class="login">
       <h1>Välkomen till AirBean-familjen!</h1>
       <h2>Genom att skapa ett konnto
         nedan kan du skapa och se din orderhistorik
@@ -48,13 +48,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .wrapper{
+  margin: auto;
+  z-index: 11;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #F3E4E1;
   height: 100vh;
+  
   color: black;
+}
+.login{
+  margin: auto;
 }
 button{
   background: #2F2926;
