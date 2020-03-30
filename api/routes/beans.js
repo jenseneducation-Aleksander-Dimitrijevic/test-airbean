@@ -33,4 +33,9 @@ router.get('/key', (req, res) => {
     res.send(JSON.stringify(key));
 })
 
+router.get('/profile/:uuid', (reg,res) => {
+    ///hämta dokumentet med nyckel uuid i databasen
+    //Skicka tillbaka till frontend
+})
+
 module.exports = router
