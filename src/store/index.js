@@ -33,7 +33,7 @@ export default new Vuex.Store({
         id:item.id,
         price:item.price,
         title:item.title,
-        quantity:1
+        quantity:1.25
       })
     },
     orderStatus(state,order){

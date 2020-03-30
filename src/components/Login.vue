@@ -12,9 +12,11 @@
       <input v-model="name" placeholder="name" type="text" class="name">
       <label for="email">Email</label>
       <input v-model="email" placeholder="email" type="email">
-      <button @click="login">Brew me a cup!</button>
+      <div class="radio">
       <label for="gdpr">GDPR</label>
-       <input class="gdpr" type="radio" name="" id="">
+       <input class="gdpr" type="radio">
+      </div>
+      <button class="button" @click="$router.push('menu')">Brew me a cup!</button>
     </form>
     </div>
    </div>
@@ -46,8 +48,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
 .wrapper{
+  position:fixed;
+  top:1rem;
+  left:1rem;
+  right: 1rem;
+  height: 8rem;
   margin: auto;
   z-index: 11;
   display: flex;
@@ -55,14 +62,21 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: #F3E4E1;
-  height: 100vh;
+  height: 80%;
   
   color: black;
 }
 .login{
   margin: auto;
 }
-button{
+.radio{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin:0 0 0 1.5rem ;
+  
+}
+.button{
   background: #2F2926;
   height: 3.5rem;
   width: 15rem;
@@ -101,5 +115,9 @@ h2{
     font-size: 1.2rem;
     font-weight: lighter;
     
+}
+
+.gdpr{
+  width: 20px;
 }
 </style>

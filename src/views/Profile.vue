@@ -1,11 +1,11 @@
 <template>
 <div class="main">
   <Menuicon :type="'menuicon'" />
-
-<div class="profile">
     <div class="login" v-if="show == false">
-<Login v-if="show == false"/>
-</div>  
+<Login class="" v-if="show == false"/>
+</div>
+<div class="profile">
+  
 <div class="profile-info">
      <img class="img" src="../assets/graphics/profile.svg" alt="profileicon">
     <h1>{{user.name}}</h1>
@@ -79,6 +79,7 @@ body {
 .main {
   padding: 6rem 1.3rem;
   height: 100vh;
+  position: relative;
   /* box-sizing: border-box; */
   background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
   background-position: top center, bottom center;
@@ -155,7 +156,6 @@ hr{
 .login{
 display: flex;
 background-color: #2f2926;
-height: 100vh;
 top: 0;
 display: flex;
 z-index: 998;
