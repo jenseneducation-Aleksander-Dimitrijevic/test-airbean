@@ -12,7 +12,7 @@
       <input v-model="name" placeholder="name" type="text" class="name">
       <label for="email">Email</label>
       <input v-model="email" placeholder="email" type="email">
-      <button @click="$router.push('/menu')">Brew me a cup!</button>
+      <button @click="login">Brew me a cup!</button>
       <label for="gdpr">GDPR</label>
        <input class="gdpr" type="radio" name="" id="">
     </form>
@@ -26,14 +26,20 @@ export default {
   props: {
     msg: String
   },
+  data(){
+    return{
+      name:'',
+      email:'',
+    }
+  },
   methods:{
     
     login(){  
     localStorage.setItem('cookie-consent', true)
+    this.$store.dispatch('udateName', {name: this.name, email:this.email})
     this.$router.push('/profile')
-
-    
     },
+
     
   }
 };

@@ -5,8 +5,8 @@
 <div class="profile">
 <div class="profile-info">
      <img class="img" src="../assets/graphics/profile.svg" alt="profileicon">
-    <h1>{{name}}</h1>
-    <h3>{{email}}</h3>
+    <h1>{{user.name}}</h1>
+    <h3>{{user.email}}</h3>
 </div>
 <div class="order-info">
     <h1>Orderhistorik</h1>
@@ -37,8 +37,15 @@ import Login from "@/components/Login.vue"
         show:false    
         }
     },
+    computed:{
+        user(){
+            return this.$store.state.user
+        }
+    },
     created(){
-        if(localStorage.getItem('airbeans')){
+        if(localStorage.getItem('airbeans')){        
+        localStorage.setItem('name', this.user.name )
+        localStorage.setItem('email', this.user.email)
            this.show = true
     } 
     },

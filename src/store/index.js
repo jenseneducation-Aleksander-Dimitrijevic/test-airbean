@@ -14,10 +14,14 @@ export default new Vuex.Store({
     menu:[],
     showNavbar:false,
     cart:[],
-    orderHistory:[]
+    orderHistory:[],
+    user:{usename: '', email:''}
 
   },
   mutations: {
+    login(state,data){
+    state.user = data  
+    },
     displayMenu(state,menu){
       state.menu = menu
     },
@@ -56,6 +60,10 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async udateName(context,data){
+    await context.commit('login',data )
+    },
+
     async getMenuList(context){
       let resp = await axios.get(API)
        context.commit('displayMenu',resp.data.menu)
