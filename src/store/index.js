@@ -13,10 +13,6 @@ export default new Vuex.Store({
     loading: false, 
     menu:[],
     showNavbar:false,
-
-    cart:[]
-    user:{[]}
-
     cart:[],
     orderHistory:[]
 
