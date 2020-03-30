@@ -1,12 +1,22 @@
 <template>
   <div class="wrapper">
+  <Menuicon :type="'menuicon'" />
+
+    <div class="login-div">
+      <h1>Välkomen till AirBean-familjen!</h1>
+      <h2>Genom ayt skapa ett konnto
+        nedan kan du skapa och se din orderhistorik
+      </h2>
     <form @submit.prevent="login">
       <label for="email">Email</label>  
-      <input type="email" class="email">
-      <label for="password">Password</label>
-      <input type="password">
-      <button @click="$router.push('/menu')">Login</button>
+      <input placeholder="Password" type="email" class="email">
+      <label for="password">password</label>
+      <input placeholder="password" type="password">
+      <button @click="$router.push('/menu')">Brew me a cup!</button>
+      <label for="gdpr">GDPR</label>
+       <input class="gdpr" type="radio" name="" id="">
     </form>
+    </div>
    </div>
 </template>
 
@@ -29,17 +39,51 @@ export default {
 <style scoped lang="scss">
 .wrapper{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: orange;
+  background-color: #F3E4E1;
   height: 100vh;
-  color: white;
+  color: black;
 }
 button{
-  background: chocolate;
-  padding: 20px;
-  color: wheat;
+  background: #2F2926;
+  height: 3.5rem;
+  width: 15rem;
+  color: white;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  font-family: serif;
+  font-weight: bold;
+
+}
+input{
+  height: 3rem;
+  width: 90%;
+  border-radius: 5px;;
+  background: none;
+  border: 1px solid black;
+  color:black;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  font-weight: lighter;;
+  // padding-left: 1rem;
+  padding: 0.5rem 0.3rem;
+  margin: 1rem;
 }
 
+h1{
+      font-size: 2.5rem;
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+    padding-top: 0.5rem;
+}
 
+h2{
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    
+}
 </style>
