@@ -20,7 +20,7 @@
     </div>
 </div>
 </div>
-<div class="login" v-if="show == true">
+<div class="login" v-if="show !== true">
 </div>    
 <Login v-if="show == true"/>
 
@@ -147,5 +147,6 @@ height: 100vh;
 display: grid;
 grid-template-columns: 2rem 2rem 2rem;
 grid-template-rows: 1fr 1fr;
+background-color: #F3E4E1;
 }
 </style>
