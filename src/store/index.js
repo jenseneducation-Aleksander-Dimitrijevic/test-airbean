@@ -13,7 +13,8 @@ export default new Vuex.Store({
     loading: false, 
     menu:[],
     showNavbar:false,
-    cart:[]
+    cart:[],
+    orderHistory:[]
   },
   mutations: {
     displayMenu(state,menu){
@@ -46,6 +47,11 @@ export default new Vuex.Store({
     removeItemInCart(state,id){
       let index = state.cart.findIndex(item => item.id===id)
       state.cart.splice(index,1)
+    },
+    orderHistory(state,orderHistory){
+      // let orderhistory = state.orderHistory.findIndex(item => item.id === id)
+      // state.orderhistory.forEach()
+      state.orderHistory = orderHistory
     }
   },
   actions: {
@@ -97,6 +103,17 @@ export default new Vuex.Store({
       } 
       
     }
+  },
+  async getorders(context){
+    let uuid = await localStorage.getItem('airbeans')
+    try{
+      let resp = await axios.get(`${API}/profile/${uuid}`)
+      context.commit('orderHistory', resp.data)
+
+    }catch(err){
+      console.error(err)
+    }
+
   }  
 
 })
