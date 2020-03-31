@@ -119,6 +119,7 @@ h1 {
     font-family: 'PT Serif', serif;
     font-weight: bold;
     padding-top: 0.5rem;
+    color: white;
     
 
 }

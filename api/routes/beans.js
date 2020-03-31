@@ -52,7 +52,7 @@ router.get('/profile/:uuid', async (req,res) => {
     console.log(getorders)
 
     //Skicka tillbaka till frontend
-    res.send(JSON.stringify(getorders));
+    res.status(200).send(JSON.stringify(getorders));
 })
 
 module.exports = router

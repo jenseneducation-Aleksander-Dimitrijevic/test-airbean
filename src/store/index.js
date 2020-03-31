@@ -15,7 +15,7 @@ export default new Vuex.Store({
     showNavbar:false,
     cart:[],
     orderHistory:[],
-    user:{usename: '', email:''}
+    user:{name: '', email:''}
 
   },
   mutations: {
@@ -33,7 +33,7 @@ export default new Vuex.Store({
         id:item.id,
         price:item.price,
         title:item.title,
-        quantity:1.25
+        quantity:1
       })
     },
     orderStatus(state,order){
@@ -54,8 +54,6 @@ export default new Vuex.Store({
       state.cart.splice(index,1)
     },
     orderHistory(state,orderHistory){
-      // let orderhistory = state.orderHistory.findIndex(item => item.id === id)
-      // state.orderhistory.forEach()
       state.orderHistory = orderHistory
     }
   },
@@ -111,20 +109,20 @@ export default new Vuex.Store({
         console.error(err)
       } 
       
-    }
+    },
+    async getOrders(context){
+      let uuid = await localStorage.getItem('airbeans')
+      try{
+        let resp = await axios.get(`${API}/profile/${uuid}`)
+        context.commit('orderHistory', resp.data)
+  
+      }catch(err){
+        console.error(err)
+      }
+  
+    }  
   },
 
-  async getorders(context){
-    let uuid = await localStorage.getItem('airbeans')
-    try{
-      let resp = await axios.get(`${API}/profile/${uuid}`)
-      context.commit('orderHistory', resp.data)
-
-    }catch(err){
-      console.error(err)
-    }
-
-  }  
 
 
 })
