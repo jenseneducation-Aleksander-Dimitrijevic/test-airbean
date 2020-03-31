@@ -14,7 +14,7 @@
 <div class="order-info">
     <h1>Orderhistorik</h1>
     <div class="orders">
-    <h2>{{order.orderHistory}}</h2>
+    <h2>{{orderHistory.orderNr}}</h2>
     <h4>ordersumma</h4>
     </div>
     <hr>
@@ -42,17 +42,23 @@ import Login from "@/components/Login.vue"
         user(){
             return this.$store.state.user
         },
-        order(){
+        orderHistory(){
             return this.$store.state.orderHistory
         }
     },
     created(){
         if(localStorage.getItem('airbeans')){        
-        localStorage.setItem('name', this.user.name )
-        localStorage.setItem('email', this.user.email)
+        // localStorage.setItem('name', this.user.name )
+        // localStorage.setItem('email', this.user.email)
            this.show = true
     }
     },
+    mounted(){
+
+        this.$store.dispatch('getOrders')
+
+    },
+
     components: {
         Login,
         Menuicon
