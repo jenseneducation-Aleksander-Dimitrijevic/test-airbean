@@ -47,7 +47,7 @@ import Login from "@/components/Login.vue"
         localStorage.setItem('name', this.user.name )
         localStorage.setItem('email', this.user.email)
            this.show = true
-    } 
+    }
     },
     components: {
         Login,
