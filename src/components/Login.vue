@@ -37,7 +37,12 @@ export default {
   methods:{
     
     login(){  
+    const nameInput = this.name
+    const emailInput = this.email
     localStorage.setItem('cookie-consent', true)
+    localStorage.setItem('nameInput', nameInput)
+    localStorage.setItem('emailInput', emailInput)
+
     this.$store.dispatch('udateName', {name: this.name, email:this.email})
     this.$router.push('/profile')
     },
