@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-  <Menuicon :type="'menuicon'" />
 
     <div class="login">
       <h1>Välkomen till AirBean-familjen!</h1>
@@ -37,14 +36,14 @@ export default {
   methods:{
     
     login(){  
-    const nameInput = this.name
-    const emailInput = this.email
+    // const nameInput = this.name
+    // const emailInput = this.email
     localStorage.setItem('cookie-consent', true)
-    localStorage.setItem('nameInput', nameInput)
-    localStorage.setItem('emailInput', emailInput)
+    localStorage.setItem('name', this.name)
+    localStorage.setItem('email', this.email)
 
     this.$store.dispatch('udateName', {name: this.name, email:this.email})
-    this.$router.push('/profile')
+    this.$router.push('/menu')
     },
 
     
