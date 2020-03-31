@@ -9,14 +9,14 @@
       </h2>
     <form @submit.prevent="login">
       <label for="name">Name</label>  
-      <input v-model="name" placeholder="name" type="text" class="name">
+      <input v-model="name" placeholder="Name" type="text" class="name">
       <label for="email">Email</label>
-      <input v-model="email" placeholder="email" type="email">
+      <input v-model="email" placeholder="Email@email.com" type="email">
       <div class="radio">
       <label for="gdpr">GDPR</label>
        <input class="gdpr" type="radio">
       </div>
-      <button class="button" @click="$router.push('menu')">Brew me a cup!</button>
+      <button type="submit" class="button">Brew me a cup!</button>
     </form>
     </div>
    </div>
@@ -56,7 +56,7 @@ export default {
 <style lang="scss">
 .wrapper{
   position:fixed;
-  top:1rem;
+  top:8.9rem;
   left:1rem;
   right: 1rem;
   height: 8rem;
@@ -100,7 +100,7 @@ input{
   border: 1px solid black;
   color:black;
   font-family: sans-serif;
-  font-size: 0.8rem;
+  font-size: 1.3em;
   font-weight: lighter;;
   // padding-left: 1rem;
   padding: 0.5rem 0.3rem;
@@ -108,10 +108,10 @@ input{
 }
 
 h1{
-      font-size: 2.5rem;
+      font-size: 2rem;
     font-family: 'PT Serif', serif;
     font-weight: bold;
-    padding-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 h2{
@@ -119,6 +119,7 @@ h2{
     font-family: 'Work Sans', sans-serif;
     font-size: 1.2rem;
     font-weight: lighter;
+    padding: 1rem;
     
 }
 
