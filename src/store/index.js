@@ -41,9 +41,9 @@ export default new Vuex.Store({
       console.log(order);
       state.activeOrder = order
     },
-    // emptyCart(state){
-    //   state.cart = []
-    // },
+    emptyCart(state){
+      state.cart = []
+    },
     updateItemInCart(state,id){
       let index = state.cart.findIndex(item => item.id === id)
       state.cart[index].quantity++;
@@ -96,7 +96,7 @@ export default new Vuex.Store({
       context.state.cart = []
 
       //  empty cart
-      //  context.commit("emptyCart")
+       context.commit("emptyCart")
     
   },
     async findUuid(){

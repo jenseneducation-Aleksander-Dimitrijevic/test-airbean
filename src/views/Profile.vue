@@ -14,6 +14,7 @@
 <div class="order-info">
     <h1>Orderhistorik</h1>
     <div class="orders">
+    <h1 v-for="order in orderHistory" :key="order._id"></h1>    
     <h2>{{orderHistory.orderNr}}</h2>
     <h4>ordersumma</h4>
     </div>
