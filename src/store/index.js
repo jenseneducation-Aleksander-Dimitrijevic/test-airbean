@@ -122,6 +122,15 @@ export default new Vuex.Store({
   
     }  
   },
+  getters:{
+    cartItemCount(state){
+      let total= 0;
+       state.cart.forEach(item =>{
+        total += item.quantity;
+        });
+        return total;
+    }
+  }
 
 
 

@@ -24,22 +24,11 @@ import Cart from './Cart'
                 return this.$store.state.cart
 
             },
-            // cartItemCount(){
-            //     return this.$store.getters.cartItemCount
-            // }
             cartLength(){
-                let total= 0;
-                this.$store.state.cart.forEach(item =>{
-                    total += item.quantity;
-                });
-                return total;
+                return this.$store.getters.cartItemCount
             }
         },
-        // methods:{
-        //     statusCart(){
-        //        return this.showCart =! this.showCart
-        //     }
-        // }
+   
         
     }
 </script>
