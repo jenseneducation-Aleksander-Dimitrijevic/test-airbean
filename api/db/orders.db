@@ -24,3 +24,6 @@
 {"eta":18,"orderNr":"AB1585722912305X","items":[{"id":2,"price":49,"title":"Caffè Doppio","quantity":2}],"total":98,"timeStamp":1585722912305,"id":"1b8a15f0-20fe-48b1-b7e4-7932dccd917e","_id":"rLYD72mLHOUzP3p3"}
 {"eta":16,"orderNr":"AB1585647211867X","items":[{"id":1,"price":39,"title":"Bryggkaffe","quantity":8}],"total":312,"timeStamp":1585647211867,"id":"192e04dd-2e4a-4b1f-8bed-9621e64a12c6","_id":"tpljoU9EIRmFyQtL"}
 {"eta":18,"orderNr":"AB1585747702342Y","items":[{"id":2,"price":49,"title":"Caffè Doppio","quantity":3}],"total":147,"timeStamp":1585747702342,"id":"daa08a45-1ff0-416d-90d8-0e3ff6af94dc","_id":"iCe3hqrJ28769rac"}
+{"eta":10,"orderNr":"AB1585755028536Y","items":[{"id":1,"price":39,"title":"Bryggkaffe","quantity":2}],"total":78,"timeStamp":1585755028536,"id":"3470df78-c554-4c0c-aa0b-121217ec36f7","_id":"9KpfXOeM08l1GBKe"}
+{"eta":23,"orderNr":"AB1585755039298Y","items":[{"id":2,"price":49,"title":"Caffè Doppio","quantity":1}],"total":49,"timeStamp":1585755039298,"id":"3470df78-c554-4c0c-aa0b-121217ec36f7","_id":"MEhCLriE2yMN8mQ1"}
+{"eta":21,"orderNr":"AB1585755842565Y","items":[{"id":1,"price":39,"title":"Bryggkaffe","quantity":1}],"total":39,"timeStamp":1585755842565,"id":"347fc4b5-2d4e-48b4-9103-6b45eddfad75","_id":"JLaPd1gxUQpYeeoO"}
