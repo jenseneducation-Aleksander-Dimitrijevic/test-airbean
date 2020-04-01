@@ -13,13 +13,28 @@
 </div>
 <div class="order-info">
     <h1>Orderhistorik</h1>
-    <div class="orders">   
-    <h2>{{orderHistory.orderNr}}</h2>
+    <div class="orders"> 
+        <ul v-for="(order, index) in orderHistory" :key="index">
+        <li>
+          <div>
+            <span class="order-nr">#{{ order.orderNr }}</span>
+          </div>
+          <div>
+            <span
+              class="date"
+            >{{ order.timeStamp}}</span>
+            <h3> Total order summa </h3>
+            <span
+              class="item-cost"
+            >{{ order.total }} kr</span>
+          </div>
+        </li>
+      </ul>  
     <h4>ordersumma</h4>
     </div>
     <hr>
     <div class="total">
-        <h5>totalt: 1620</h5>
+        <h5>{{ totalAmount}}</h5>
     </div>
 </div>
 </div>
@@ -44,7 +59,16 @@ import Login from "@/components/Login.vue"
         },
         orderHistory(){
             return this.$store.state.orderHistory
-        }
+        },
+        totalAmount() {
+      let amount = 0;
+      amount += this.orderHistory
+        .map(item => item.total)
+        .reduce((a, b) => {
+          return a + b;
+        }, 0);
+      return amount;
+    }
     },
     created(){
         if(localStorage.getItem('airbeans')){        
