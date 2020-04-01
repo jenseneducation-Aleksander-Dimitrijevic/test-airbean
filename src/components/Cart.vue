@@ -40,7 +40,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style lang="scss">
 
  .cart{
@@ -49,35 +49,18 @@ export default {
    top: 8rem;
    right: .1rem;
    left: .1rem;
-  //  width: calc(100vh -10rem);
    margin: 1rem;
    z-index: 999;
-   box-shadow: 0 0 1rem rgba(0,0,0,.2), 0 0 4rem rgba(0,0,0,.2) ;
+   box-shadow: 0 0 1rem rgba(0,0,0,.2), 0 0 4rem rgba(0,0,0,.2);
+   border-radius: 5px;
    h3{
      padding: 1rem;
    }
-    
-    // &after {
-    //  content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 91%;
-    //     width: 0;
-    //     height: 0;
-    //     border: 8px solid transparent;
-    //     border-bottom-color: white;
-    //     // border-top: 0;
-    //     // margin-left: -8px;
-    //     // margin-top: -8px;
-    //     border-radius: 2px;
-    // }
    .totalamount{
-     display:flex;
      flex-direction:column;
      margin: 2rem 1rem;
      h3{
        display: flex;
-       margin: 0;
       .dots{
          display:flex;
          justify-content:center;
@@ -88,7 +71,6 @@ export default {
        }
      }
      p{
-      //  display:flex;
        justify-content:flex-start;
        margin:0 0 0 5px; 
        padding:0;
@@ -102,14 +84,12 @@ export default {
         align-items:center;
         text-decoration: none;
         height: 4rem;
-        margin: .7rem 1rem;
+        margin: 2rem 1rem;
         justify-content: center;
         align-items: center;
         color: #eee;
         border-radius: 50px;;
         background:black;
-        
-
         &:active {
             color: white;
             background: black;
