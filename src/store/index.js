@@ -129,6 +129,13 @@ export default new Vuex.Store({
         total += item.quantity;
         });
         return total;
+    },
+    totalMountCart(state){
+      let totalamount = 0;
+      state.cart.forEach(item=>{
+      totalamount += item.price * item.quantity
+      })
+      return totalamount
     }
   }
 

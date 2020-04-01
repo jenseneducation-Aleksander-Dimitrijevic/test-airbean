@@ -24,11 +24,7 @@ export default {
       return this.$store.state.cart
     },
     totalamount(){
-      let totalamount = 0;
-      this.$store.state.cart.forEach(item=>{
-        totalamount += item.price * item.quantity
-      })
-      return totalamount
+      return this.$store.getters.totalMountCart
     }
   },
   methods:{
