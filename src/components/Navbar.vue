@@ -49,10 +49,8 @@
         margin:1rem;
         text-decoration: none;
         color: white;
-        &:hover{
-            color:brown;
-            font-size:56px;
-        }
+        font-family: serif;
+      
       }
       .lines{
           width: 150px;
