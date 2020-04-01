@@ -16,21 +16,13 @@
     <div class="orders"> 
         <ul v-for="(order, index) in orderHistory" :key="index">
         <li>
-          <div>
-            <span class="order-nr">#{{ order.orderNr }}</span>
-          </div>
-          <div>
-            <span
-              class="date"
-            >{{ order.timeStamp}}</span>
-            <h3> Total order summa </h3>
-            <span
-              class="item-cost"
-            >{{ order.total }} kr</span>
-          </div>
+          <h2 class="orderid">{{ order.orderNr }}</h2>
+          <h3 class="dater">{{ order.timeStamp }}</h3>
+          <h3 class="text"> Total ordersumma  kr</h3>
+          <h3 class="price">{{ order.total }}</h3>
         </li>
       </ul>  
-    <h4>ordersumma</h4>
+    <h4>totalt spenderat</h4>
     </div>
     <hr>
     <div class="total">
@@ -133,22 +125,22 @@ body {
     color: floralwhite;
     padding: 1rem 1rem;  
 } 
-.profile-info{
+/* .profile-info{
     padding:0.2rem;
 }
 .order-info{
 padding-top: 5rem;
-}
+} */
 
-.orders{
+/* .orders{
 padding-top: 2rem;  
-}
+} */
 
 h1 {
     font-size: 1.5rem;
     font-family: 'PT Serif', serif;
     font-weight: bold;
-    padding-top: 0.5rem;
+    /* padding-top: 0.5rem;   */
     color: white;
     
 
@@ -157,12 +149,14 @@ h2{
     color: lightgray;
     font-family: 'Work Sans', sans-serif;
     font-weight: bold;
-    font-size:0.9rem
+    font-size:0.9rem;
+    padding: 0
 }
 h3{
     font-family: 'Work Sans', sans-serif;
     font-weight: lighter;
     font-size: 0.9rem;
+    /* padding-right: 3rem; */
 }
 
 
@@ -193,5 +187,16 @@ z-index: 998;
 /* grid-template-columns: 2rem 2rem 2rem;
 grid-template-rows: 1fr 1fr; */
 background-color: #F3E4E1;
+}
+
+ul{
+  list-style: none;
+  padding: 5px
+}
+li{
+  display: grid;
+  grid-template-areas: 
+  "orderid dater"
+  "text price";
 }
 </style>
