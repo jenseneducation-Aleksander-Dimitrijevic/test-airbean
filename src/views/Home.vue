@@ -16,7 +16,7 @@ export default {
 <style lang="scss">
 #home {
   height: 100vh;
-  background-color: green;
+  background-color: #38846d;
   background-image: url('./../assets/graphics/intro-graphic-left.svg'), url('./../assets/graphics/intro-graphic-right.svg') !important; 
   background-position: top left, top right !important;
   background-size: auto 100%, auto 100% !important;
