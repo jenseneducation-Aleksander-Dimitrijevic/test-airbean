@@ -3,7 +3,7 @@
         <Menuicon :type="'close'" />
         <router-link @click.native="close" class="links" to="/menu" >Meny</router-link>
         <hr class="lines">
-        <router-link @click.native="close" class="links" to="/about">Vår kaffe</router-link>
+        <router-link @click.native="close" class="links" to="/about">Vårt kaffe</router-link>
         <hr class="lines">
         <router-link @click.native="close" class="links" to="/profile">Min profil</router-link>
         <hr class="lines">
