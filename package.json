@@ -2,7 +2,8 @@
   "name": "air-bean-firepirates",
   "version": "0.1.0",
   "engines": {
-    "node": "14.8.0"
+    "node": "14.8.0",
+    "npm": "6.13.6"
   },
   "private": true,
   "scripts": {
