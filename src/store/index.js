@@ -36,8 +36,6 @@ export default new Vuex.Store({
       });
     },
     orderStatus(state, order) {
-      console.log("här kommer ordern");
-      console.log(order);
       state.activeOrder = order;
     },
     emptyCart(state) {
@@ -76,7 +74,6 @@ export default new Vuex.Store({
       }
     },
     async sendOrder(context) {
-      console.log("Order is send");
       let order = {
         items: context.state.cart,
       };
@@ -89,7 +86,7 @@ export default new Vuex.Store({
         context.state.loading = false;
         context.commit("orderStatus", resp.data);
       } catch (err) {
-        console.error(err);
+        console.log("someting went wrong");
       }
       //remove
       context.state.cart = [];
@@ -103,8 +100,8 @@ export default new Vuex.Store({
           let uuid = await axios.get(`${API}/key`);
           localStorage.setItem("airbeans", uuid.data.key);
         }
-      } catch (err) {
-        console.error(err);
+      } catch (error) {
+        console.error("someting went wrong");
       }
     },
     async getOrders(context) {
@@ -112,8 +109,8 @@ export default new Vuex.Store({
       try {
         let resp = await axios.get(`${API}/profile/${uuid}`);
         context.commit("orderHistory", resp.data);
-      } catch (err) {
-        console.error(err);
+      } catch (error) {
+        console.error("someting went wrong");
       }
     },
   },
