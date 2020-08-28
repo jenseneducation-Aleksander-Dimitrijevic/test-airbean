@@ -17,8 +17,4 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public", "index.html"));
-});
-
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
