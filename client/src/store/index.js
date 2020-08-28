@@ -3,7 +3,7 @@ import Vuex from "vuex";
 import axios from "axios";
 //app
 
-const API = "http://localhost:5000/api/beans";
+const API = "https://max-airbean.herokuapp.com/api/beans";
 
 Vue.use(Vuex);
 
