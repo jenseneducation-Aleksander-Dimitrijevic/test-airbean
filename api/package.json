@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "api",
   "main": "app.js",
-  "engines": {
-    "node": "13.7.0"
-  },
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
-    "client": "npm run serve --prefix ../",
+    "client": "npm run serve --prefix ../client/",
     "dev": "concurrently \"npm run server\" \" npm run client \""
   },
   "author": "Christoffer Wallenberg",
@@ -20,6 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "lowdb": "^1.0.0",
+    "nedb-promise": "^2.0.1",
     "node": "^14.8.0",
     "node-sass": "^4.14.1",
     "request": "^2.88.2",
